@@ -3,24 +3,104 @@
   <component name="ContentModelStore">
     <e p="C:\Users\genar\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_TheGameGame.1657734040.00" t="ExcludeRecursive" />
     <e p="E:\GIT\2019juniorGame\TheGameGame" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets\Editor" t="Include">
+        <e p="FMODMigrationUtil.cs" t="Include" />
+      </e>
+      <e p="Assets\GoogleVR" t="Include">
+        <e p="Editor" t="Include">
+          <e p="FmodGvrAudioRoomEditor.cs" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Audio" t="Include">
+            <e p="FmodGvrAudio.cs" t="Include" />
+            <e p="FmodGvrAudioRoom.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Assets\Plugins" t="Include">
+        <e p="Editor" t="Include">
+          <e p="FMOD" t="Include">
+            <e p="BankRefDrawer.cs" t="Include" />
+            <e p="CreateEventPopup.cs" t="Include" />
+            <e p="EditorBankRef.cs" t="Include" />
+            <e p="EditorEventRef.cs" t="Include" />
+            <e p="EditorParamRef.cs" t="Include" />
+            <e p="EditorUtils.cs" t="Include" />
+            <e p="EventBrowser.cs" t="Include" />
+            <e p="EventCache.cs" t="Include" />
+            <e p="EventManager.cs" t="Include" />
+            <e p="EventRefDrawer.cs" t="Include" />
+            <e p="FindAndReplace.cs" t="Include" />
+            <e p="LogViewer.cs" t="Include" />
+            <e p="MigrationUtil.cs" t="Include" />
+            <e p="ParamRefDrawer.cs" t="Include" />
+            <e p="SettingsEditor.cs" t="Include" />
+            <e p="StudioBankLoaderEditor.cs" t="Include" />
+            <e p="StudioEventEmitterEditor.cs" t="Include" />
+            <e p="StudioEventEmitterGizmoDrawer.cs" t="Include" />
+            <e p="StudioListenerEditor.cs" t="Include" />
+            <e p="StudioParameterTriggerEditor.cs" t="Include" />
+          </e>
+        </e>
+        <e p="FMOD" t="Include">
+          <e p="BankRefAttribute.cs" t="Include" />
+          <e p="EventRefAttribute.cs" t="Include" />
+          <e p="FMOD_Listener.cs" t="Include" />
+          <e p="FMOD_StudioEventEmitter.cs" t="Include" />
+          <e p="FMODAsset.cs" t="Include" />
+          <e p="OneshotList.cs" t="Include" />
+          <e p="ParamRef.cs" t="Include" />
+          <e p="RuntimeManager.cs" t="Include" />
+          <e p="RuntimeUtils.cs" t="Include" />
+          <e p="Settings.cs" t="Include" />
+          <e p="StudioBankLoader.cs" t="Include" />
+          <e p="StudioEventEmitter.cs" t="Include" />
+          <e p="StudioListener.cs" t="Include" />
+          <e p="StudioParameterTrigger.cs" t="Include" />
+          <e p="Wrapper" t="Include">
+            <e p="fmod.cs" t="Include" />
+            <e p="fmod_dsp.cs" t="Include" />
+            <e p="fmod_errors.cs" t="Include" />
+            <e p="fmod_studio.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Assets\ResonanceAudio" t="Include">
+        <e p="Editor" t="Include">
+          <e p="FmodResonanceAudioRoomEditor.cs" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="FmodResonanceAudio.cs" t="Include" />
+          <e p="FmodResonanceAudioRoom.cs" t="Include" />
+        </e>
+      </e>
       <e p="Assets\Scenes" t="Include">
         <e p="AI Testing" t="Include">
           <e p="Scripts" t="Include">
             <e p="EnemyManager.cs" t="Include" />
+            <e p="EnemyMovement.cs" t="Include" />
             <e p="enemyStats.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="Scriptable Objects" t="Include">
               <e p="ABS_AIAction.cs" t="Include" />
               <e p="ABS_Decision.cs" t="Include" />
-              <e p="ActivateStateDecision.cs" t="Include" />
+              <e p="ActiveStateDecision.cs" t="Include" />
               <e p="ChaseAction.cs" t="Include" />
               <e p="LookDecision.cs" t="Include" />
               <e p="PatrolAction.cs" t="Include" />
               <e p="ScanDecision.cs" t="Include" />
+              <e p="SmallMediumPatrolAction.cs" t="Include" />
               <e p="SO_State.cs" t="Include" />
               <e p="StateController.cs" t="Include" />
+              <e p="States" t="Include">
+                <e p="NotUsed" t="Include">
+                  <e p="AttackAction.cs" t="Include" />
+                </e>
+              </e>
               <e p="Transition.cs" t="Include" />
             </e>
             <e p="SphereCast.cs" t="Include" />
@@ -57,6 +137,7 @@
           <e p="PlayerData.cs" t="Include" />
           <e p="PlayerSpawnManager.cs" t="Include" />
           <e p="PlayerUIAnimatorCtrls.cs" t="Include" />
+          <e p="PPPPPlayerAttack.cs" t="Include" />
           <e p="Projectile.cs" t="Include" />
           <e p="RefillAbility.cs" t="Include" />
           <e p="RigidbodyPlayerController.cs" t="Include" />
@@ -93,6 +174,7 @@
         </e>
         <e p="Enemy" t="Include">
           <e p="EnemyData.cs" t="Include" />
+          <e p="EnemySpawnPointData.cs" t="Include" />
           <e p="NavRigid.cs" t="Include" />
           <e p="OnCollisionTest.cs" t="Include" />
           <e p="WanderAI.cs" t="Include" />
@@ -175,6 +257,7 @@
         <e p="Cel.shader" t="Include" />
         <e p="HighLight.shader" t="Include" />
       </e>
+      <e p="Assets\SoundsManager.cs" t="Include" />
       <e p="Assets\Standard Assets" t="Include">
         <e p="CrossPlatformInput" t="Include">
           <e p="CrossPlatformInputGuidelines.txt" t="Include" />

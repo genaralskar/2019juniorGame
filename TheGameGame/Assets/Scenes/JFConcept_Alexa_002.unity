@@ -1195,6 +1195,121 @@ Transform:
   m_Father: {fileID: 985876127}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &44559944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 44559945}
+  - component: {fileID: 44559950}
+  - component: {fileID: 44559949}
+  - component: {fileID: 44559948}
+  - component: {fileID: 44559947}
+  - component: {fileID: 44559946}
+  m_Layer: 0
+  m_Name: Kill Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &44559945
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44559944}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 340, y: -318, z: 106}
+  m_LocalScale: {x: 19158.686, y: 38.317524, z: 19158.688}
+  m_Children:
+  - {fileID: 166627518}
+  m_Father: {fileID: 1327027773}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &44559946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44559944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 1000
+  baseKnockBack: 100
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
+--- !u!208 &44559947
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44559944}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!23 &44559948
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44559944}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 46f45f19ff845194d8724923a9aa9498, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &44559949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44559944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &44559950
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44559944}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &49861281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,10 +1355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &49861284
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2966,6 +3081,47 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &166627517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 166627518}
+  - component: {fileID: 166627519}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &166627518
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 166627517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.9, z: 1}
+  m_Children: []
+  m_Father: {fileID: 44559945}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &166627519
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 166627517}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &166956259
 Prefab:
   m_ObjectHideFlags: 0
@@ -7475,10 +7631,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &292711936
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7818,10 +7974,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &322980768
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8401,10 +8557,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &343597345
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -12710,10 +12866,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &623338217
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -12847,10 +13003,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &654932194
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -14848,10 +15004,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &757909484
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -22758,10 +22914,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1015273722
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -23458,10 +23614,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1036547667
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -23573,10 +23729,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1037411989
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -23849,7 +24005,7 @@ Prefab:
         type: 2}
     - target: {fileID: 1415300525510506, guid: 462bac2abd962e84897536966802023e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 462bac2abd962e84897536966802023e, type: 2}
@@ -29908,6 +30064,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1236245479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1236245480}
+  m_Layer: 0
+  m_Name: Lava Knockback Direction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1236245480
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236245479}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1603655102}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1243416350 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 362d38120cdb9d04a9c341432e8781b9, type: 3}
@@ -30265,10 +30449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1284772319
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -30752,6 +30936,7 @@ Transform:
   - {fileID: 985876127}
   - {fileID: 446678788}
   - {fileID: 1603655102}
+  - {fileID: 44559945}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33273,10 +33458,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1427607389
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -43403,6 +43588,7 @@ Transform:
   - {fileID: 1015273720}
   - {fileID: 1891953586}
   - {fileID: 654932192}
+  - {fileID: 1236245480}
   m_Father: {fileID: 1327027773}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -46784,10 +46970,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1855300657
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -47294,10 +47480,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1891953588
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -47665,10 +47851,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1902699530
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -47991,10 +48177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1927487272
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -48218,10 +48404,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1929460663
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -48670,10 +48856,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1948634535
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -49103,10 +49289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &1974183958
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -50032,10 +50218,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  baseKnockBack: 0
-  hitboxType: 0
-  directionalObject: {fileID: 0}
+  baseDamage: 1
+  baseKnockBack: 5
+  hitboxType: 1
+  directionalObject: {fileID: 1236245480}
 --- !u!208 &2009719483
 NavMeshObstacle:
   m_ObjectHideFlags: 0

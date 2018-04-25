@@ -72,7 +72,9 @@ public class Health : MonoBehaviour {
 		//updates player ui damage display
 		if(gameObject.tag == "Player")
 		{
-			Animator _playerUIAnim = GetComponentInChildren<Animator>();
+		//	Animator _playerUIAnim = GetComponentInChildren<Animator>();
+			Animator _playerUIAnim = transform.GetChild((0)).GetComponent<Animator>();
+			print(currentDamage);
 			_playerUIAnim.SetInteger("damage", currentDamage);
 			_playerUIAnim.SetTrigger("injured");
 		}

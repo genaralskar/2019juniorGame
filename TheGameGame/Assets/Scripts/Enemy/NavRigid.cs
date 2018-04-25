@@ -64,7 +64,8 @@ public class NavRigid : MonoBehaviour {
 			//if relative magnitude is big enough
 			if(other.relativeVelocity.magnitude > pushMag)
 			{
-				//push this rigidbody
+				print(other.relativeVelocity.magnitude + " : " + pushMag);
+				//push this rigidbody 
 				Push(collNR.lfVelocity);
 				other.rigidbody.velocity = collNR.lfVelocity / pushbackMod;
 			}

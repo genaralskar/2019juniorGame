@@ -29,7 +29,7 @@ public class DisplayDamage : MonoBehaviour {
 		damage200img = damage200meter.GetComponent<Image>();
 		damage300img = damage300meter.GetComponent<Image>();
 
-		playerAnim = player.GetComponent<Animator>();
+		playerAnim = player.transform.GetChild((0)).GetComponent<Animator>();
 	}
 
 	//updates damage meter display

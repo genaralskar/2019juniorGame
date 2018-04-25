@@ -1,10 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
-using System.Collections;
 using System.Text;
 using UnityEngine;
-using UnityEngine.Networking;
 
 namespace FMODUnity
 {
@@ -14,7 +12,6 @@ namespace FMODUnity
         static SystemNotInitializedException initException = null;
         static RuntimeManager instance;
         static bool isQuitting = false;
-
         [SerializeField]
         FMODPlatform fmodPlatform;
         static RuntimeManager Instance
@@ -494,54 +491,6 @@ retry:
             }
         }
 
-        private void loadedBankRegister(LoadedBank loadedBank, string bankPath, string bankName, bool loadSamples, FMOD.RESULT loadResult)
-        {
-            if (loadResult == FMOD.RESULT.OK)
-            {
-                loadedBank.RefCount = 1;
-
-                if (loadSamples)
-                {
-                    loadedBank.Bank.loadSampleData();
-                }
-
-                Instance.loadedBanks.Add(bankName, loadedBank);
-            }
-            else if (loadResult == FMOD.RESULT.ERR_EVENT_ALREADY_LOADED)
-            {
-                // someone loaded this bank directly using the studio API
-                // TODO: will the null bank handle be an issue
-                loadedBank.RefCount = 2;
-                Instance.loadedBanks.Add(bankName, loadedBank);
-            }
-            else
-            {
-                throw new BankLoadException(bankPath, loadResult);
-            }
-        }
-
-#if UNITY_WEBGL
-        IEnumerator loadFromWeb(string bankPath, string bankName, bool loadSamples)
-        {
-            byte[] loadWebResult;
-            FMOD.RESULT loadResult;
-            
-            UnityEngine.Networking.UnityWebRequest www = UnityEngine.Networking.UnityWebRequest.Get(bankPath);
-            yield return www.SendWebRequest();
-            loadWebResult = www.downloadHandler.data;
-
-            LoadedBank loadedBank = new LoadedBank();
-            loadResult = Instance.studioSystem.loadBankMemory(loadWebResult, FMOD.Studio.LOAD_BANK_FLAGS.NORMAL, out loadedBank.Bank);
-            if (loadResult != FMOD.RESULT.OK)
-            {
-                UnityEngine.Debug.LogWarningFormat("loadFromWeb.  Path = {0}, result = {1}.", bankPath, loadResult);
-            }
-            loadedBankRegister(loadedBank, bankPath, bankName, loadSamples, loadResult);
-
-            Debug.LogFormat("Finished loading {0}", bankPath);
-        }
-#endif
-
         public static void LoadBank(string bankName, bool loadSamples = false)
         {
             if (Instance.loadedBanks.ContainsKey(bankName))
@@ -557,6 +506,7 @@ retry:
             }
             else
             {
+                LoadedBank loadedBank = new LoadedBank();
                 string bankPath = RuntimeUtils.GetBankPath(bankName);
                 FMOD.RESULT loadResult;
                 #if UNITY_ANDROID && !UNITY_EDITOR
@@ -571,24 +521,36 @@ retry:
                         }
                         else
                         {
-                            LoadedBank loadedBank = new LoadedBank();
                             loadResult = Instance.studioSystem.loadBankMemory(www.bytes, FMOD.Studio.LOAD_BANK_FLAGS.NORMAL, out loadedBank.Bank);
-                            loadedBankRegister(loadedBank, bankPath, bankName, loadSamples, loadResult);
                         }
                     }
                 }
                 else
-                #elif UNITY_WEBGL
-                if (bankPath.Contains("://"))
-                {
-                    Instance.StartCoroutine(Instance.loadFromWeb(bankPath, bankName, loadSamples));
-                }
-                else
                 #endif
                 {
-                    LoadedBank loadedBank = new LoadedBank();
                     loadResult = Instance.studioSystem.loadBankFile(bankPath, FMOD.Studio.LOAD_BANK_FLAGS.NORMAL, out loadedBank.Bank);
-                    Instance.loadedBankRegister(loadedBank, bankPath, bankName, loadSamples, loadResult);
+                }
+
+                if (loadResult == FMOD.RESULT.OK)
+                {
+                    loadedBank.RefCount = 1;
+                    Instance.loadedBanks.Add(bankName, loadedBank);
+
+                    if (loadSamples)
+                    {
+                        loadedBank.Bank.loadSampleData();
+                    }
+                }
+                else if (loadResult == FMOD.RESULT.ERR_EVENT_ALREADY_LOADED)
+                {
+                    // someone loaded this bank directly using the studio API
+                    // TODO: will the null bank handle be an issue
+                    loadedBank.RefCount = 2;
+                    Instance.loadedBanks.Add(bankName, loadedBank);
+                }
+                else
+                {
+                    throw new BankLoadException(bankPath, loadResult);
                 }
             }
         }
@@ -897,13 +859,8 @@ retry:
         {
             get
             {
-                return Instance.loadedBanks.Count > 1; 
+                return instance.loadedBanks.Count > 1;
             }
-        }
-
-        public static bool HasBankLoaded(string loadedBank)
-        {
-            return (instance.loadedBanks.ContainsKey(loadedBank));
         }
 
         private void LoadPlugins(Settings fmodSettings)
